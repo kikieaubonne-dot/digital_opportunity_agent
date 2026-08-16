@@ -52,15 +52,3 @@ app.use((req, res) => {
 });
 
 // eslint-disable-next-line no-unused-vars
-app.use((err, req, res, next) => {
-  console.error("[forge-ai] error:", err);
-  if (err.message === "Not allowed by CORS") {
-    return res.status(403).json({ error: "CORS: origin not allowed", allowed: ALLOWED_ORIGINS });
-  }
-  res.status(500).json({ error: "internal server error" });
-});
-
-app.listen(PORT, () => {
-  console.log(`[forge-ai] backend listening on port ${PORT}`);
-  console.log(`[forge-ai] CORS allowed origins: ${ALLOWED_ORIGINS.join(", ")}`);
-});
