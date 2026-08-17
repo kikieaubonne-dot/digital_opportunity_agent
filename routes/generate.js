@@ -8,7 +8,7 @@ const express = require("express");
 const router = express.Router();
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-const GEMINI_MODEL = "gemini-2.0-flash";
+const GEMINI_MODEL = "gemini-2.5-flash-lite";
 
 router.post("/", async (req, res) => {
   if (!GEMINI_API_KEY) {
